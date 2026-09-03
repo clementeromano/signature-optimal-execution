@@ -3,7 +3,7 @@
 This project studies optimal trade execution when the trading speed is a linear functional of the signature of the observed price path:
 
 $$
-\theta_t = \left\langle \ell, \operatorname{Sig}(t, S_t)_{0,t} \right\rangle.
+\theta_t = \left\langle \ell, \mathrm{Sig}(t, S_t)_{0,t} \right\rangle.
 $$
 
 The main contribution is a small symbolic algebra layer that builds the execution objective directly from shuffle products and tensor concatenation. The resulting objective is quadratic in the strategy coefficients, so it can be optimized after explicitly checking convexity or concavity.
@@ -27,7 +27,7 @@ At signature level 4, the expected inventory differs from the classical Brownian
 For the time-augmented price path $\widehat S_t=(t,S_t)$, choose a control
 
 $$
-\theta_t=\langle\ell,\operatorname{Sig}(\widehat S)_{0,t}\rangle.
+\theta_t=\langle\ell,\mathrm{Sig}(\widehat S)_{0,t}\rangle.
 $$
 
 The shuffle identity turns products of controls into linear evaluations on the signature, while concatenation with the time letter represents integration in time. Inventory, trading costs, risk penalties, and terminal liquidation terms can therefore be assembled as one signature functional. Pairing it with an exact or empirical expected signature produces a finite-dimensional polynomial in $\ell$.
